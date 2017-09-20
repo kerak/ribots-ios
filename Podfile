@@ -7,7 +7,7 @@ target 'ribots' do
 
   # Pods for ribots
   pod 'Alamofire', '4.5'
-  pod 'FoldingCell', '2.0.3' 
+  pod 'BouncyLayout', '1.1.0'
 
   target 'ribotsTests' do
     inherit! :search_paths
