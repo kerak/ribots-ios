@@ -12,6 +12,8 @@ import BouncyLayout
 private let reuseIdentifier = "Cell"
 
 class MainViewController: UIViewController {
+    var ribots : [Ribot] = [Ribot]()
+    
     let cellSize = UIScreen.main.bounds.width*0.75
     
     let numberOfItems = 100
@@ -58,14 +60,19 @@ class MainViewController: UIViewController {
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: insets.right)
             ])
         
-
+        API.getRibots { (success, ribots) in
+            if(success) {
+                self.ribots = ribots!
+                //self.collectionView.reloadData()
+            }
+        }
     }
 }
 
 extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfItems
+        return 100
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

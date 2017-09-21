@@ -25,11 +25,6 @@ class MainCell: UICollectionViewCell {
     lazy var left: NSLayoutConstraint = self.background.leftAnchor.constraint(equalTo: self.contentView.leftAnchor)
     lazy var bottom: NSLayoutConstraint = self.background.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
     lazy var right: NSLayoutConstraint = self.background.rightAnchor.constraint(equalTo: self.contentView.rightAnchor)
-    
-    func setCell() {
-        background.backgroundColor = UIColor.red
-    }
-    
     lazy var background: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +33,12 @@ class MainCell: UICollectionViewCell {
         
         return view
     }()
+    
+    func setCell(ribot: Ribot) {
+        background.backgroundColor = UIColor(hue: <#T##CGFloat#>, saturation: <#T##CGFloat#>, brightness: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+    }
+    
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
