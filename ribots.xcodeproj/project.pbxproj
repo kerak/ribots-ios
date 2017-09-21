@@ -17,6 +17,9 @@
 		1ED4E0411F72E7A10005043A /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4E0401F72E7A10005043A /* Name.swift */; };
 		1ED4E0481F72EF890005043A /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4E0471F72EF890005043A /* MainCell.swift */; };
 		1ED4E04A1F72F1FD0005043A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4E0491F72F1FD0005043A /* MainViewController.swift */; };
+		1ED4E04F1F74379C0005043A /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ED4E04E1F74379C0005043A /* MainCell.xib */; };
+		1ED4E0521F743D780005043A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4E0511F743D780005043A /* UIColor.swift */; };
+		1ED4E0581F7455F40005043A /* RibotDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4E0571F7455F40005043A /* RibotDetailsViewController.swift */; };
 		6D1645BA450F87876D9DD49B /* Pods_ribotsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C935C2647D7F2944DC704FF2 /* Pods_ribotsTests.framework */; };
 		C81534E3466CE9569F175076 /* Pods_ribots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78FFD6A469B1E5481F331102 /* Pods_ribots.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,9 @@
 		1ED4E0401F72E7A10005043A /* Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		1ED4E0471F72EF890005043A /* MainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		1ED4E0491F72F1FD0005043A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MainViewController.swift; sourceTree = "<group>"; };
+		1ED4E04E1F74379C0005043A /* MainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
+		1ED4E0511F743D780005043A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		1ED4E0571F7455F40005043A /* RibotDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RibotDetailsViewController.swift; sourceTree = "<group>"; };
 		4C0B6B4DE56FE6B3369F381C /* Pods-ribotsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ribotsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ribotsTests/Pods-ribotsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74B352B531BC40A70A57632E /* Pods-ribotsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ribotsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ribotsTests/Pods-ribotsTests.release.xcconfig"; sourceTree = "<group>"; };
 		78FFD6A469B1E5481F331102 /* Pods_ribots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ribots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,8 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				1ED4E03A1F72E5510005043A /* API */,
-				1ED4E0421F72ED030005043A /* ViewControllers */,
+				1ED4E0501F743D610005043A /* Extensions */,
 				1ED4E0451F72EF550005043A /* Components */,
+				1ED4E0421F72ED030005043A /* ViewControllers */,
 				1ED4E01A1F72E41B0005043A /* AppDelegate.swift */,
 				1ED4E01E1F72E41B0005043A /* Main.storyboard */,
 				1ED4E0211F72E41B0005043A /* Assets.xcassets */,
@@ -140,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				1ED4E0491F72F1FD0005043A /* MainViewController.swift */,
+				1ED4E0571F7455F40005043A /* RibotDetailsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -156,8 +164,17 @@
 			isa = PBXGroup;
 			children = (
 				1ED4E0471F72EF890005043A /* MainCell.swift */,
+				1ED4E04E1F74379C0005043A /* MainCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		1ED4E0501F743D610005043A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1ED4E0511F743D780005043A /* UIColor.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		67A36B24B36A214DA18775EA /* Frameworks */ = {
@@ -271,6 +288,7 @@
 			files = (
 				1ED4E0251F72E41B0005043A /* LaunchScreen.storyboard in Resources */,
 				1ED4E0221F72E41B0005043A /* Assets.xcassets in Resources */,
+				1ED4E04F1F74379C0005043A /* MainCell.xib in Resources */,
 				1ED4E0201F72E41B0005043A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,7 +400,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ED4E0581F7455F40005043A /* RibotDetailsViewController.swift in Sources */,
 				1ED4E03C1F72E5640005043A /* API.swift in Sources */,
+				1ED4E0521F743D780005043A /* UIColor.swift in Sources */,
 				1ED4E03F1F72E5940005043A /* Ribot.swift in Sources */,
 				1ED4E0481F72EF890005043A /* MainCell.swift in Sources */,
 				1ED4E01B1F72E41B0005043A /* AppDelegate.swift in Sources */,

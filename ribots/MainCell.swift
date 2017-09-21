@@ -7,51 +7,34 @@
 //
 
 import UIKit
-import FoldingCell
-
-//class MainCell: FoldingCell {
-//
-//    override func animationDuration(_ itemIndex: NSInteger, type: FoldingCell.AnimationType) -> TimeInterval {
-//        let durations = [0.26, 0.2, 0.2]
-//        return durations[itemIndex]
-//    }
-//}
+import Kingfisher
 
 class MainCell: UICollectionViewCell {
     
-    static let reuseIdentifier: String = "Cell"
-    
-    lazy var top: NSLayoutConstraint = self.background.topAnchor.constraint(equalTo: self.contentView.topAnchor)
-    lazy var left: NSLayoutConstraint = self.background.leftAnchor.constraint(equalTo: self.contentView.leftAnchor)
-    lazy var bottom: NSLayoutConstraint = self.background.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
-    lazy var right: NSLayoutConstraint = self.background.rightAnchor.constraint(equalTo: self.contentView.rightAnchor)
-    lazy var background: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 300 / 2
-        view.clipsToBounds = true
-        
-        return view
-    }()
+    static let reuseIdentifier: String = "MainCell"
+
+    @IBOutlet weak var backgroundColorView: UIView!
+    @IBOutlet weak var avatarImageView: UIImageView!
     
     func setCell(ribot: Ribot) {
-        background.backgroundColor = UIColor(hue: <#T##CGFloat#>, saturation: <#T##CGFloat#>, brightness: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+        avatarImageView.layer.cornerRadius = avatarImageView.bounds.width/2
+        backgroundColorView.layer.cornerRadius = backgroundColorView.bounds.width/2
+        
+        backgroundColorView.backgroundColor = UIColor(hex: ribot.hexColor!)
+        
+        if let imageUrl = ribot.avatar {
+            avatarImageView.kf.setImage(with: URL(string: imageUrl))
+        }
+        else {
+            avatarImageView.image = #imageLiteral(resourceName: "profile_placeholder")
+        }
     }
     
-
-    
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        contentView.backgroundColor = nil
-        contentView.addSubview(background)
-        
-        NSLayoutConstraint.activate([top, left, bottom, right])
-        
-        
     }
 }

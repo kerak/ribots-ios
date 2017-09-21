@@ -9,10 +9,9 @@
 import UIKit
 import BouncyLayout
 
-private let reuseIdentifier = "Cell"
-
 class MainViewController: UIViewController {
     var ribots : [Ribot] = [Ribot]()
+    var selectedRibot : Ribot?
     
     let cellSize = UIScreen.main.bounds.width*0.75
     
@@ -38,7 +37,7 @@ class MainViewController: UIViewController {
         view.isOpaque = false
         view.delegate = self
         view.dataSource = self
-        view.register(MainCell.self, forCellWithReuseIdentifier: MainCell.reuseIdentifier)
+        view.register(UINib(nibName: "MainCell", bundle: nil), forCellWithReuseIdentifier: MainCell.reuseIdentifier)
         
         return view
     }()
@@ -52,6 +51,7 @@ class MainViewController: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: insets.top + additionalInsets.top, left: insets.left + additionalInsets.left, bottom: insets.bottom + additionalInsets.bottom, right: insets.right + additionalInsets.right)
         collectionView.scrollIndicatorInsets = UIEdgeInsets(top: insets.top, left: insets.left, bottom: insets.bottom, right: insets.right)
         view.addSubview(collectionView)
+        view.sendSubview(toBack: collectionView)
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: -insets.top),
@@ -63,8 +63,15 @@ class MainViewController: UIViewController {
         API.getRibots { (success, ribots) in
             if(success) {
                 self.ribots = ribots!
-                //self.collectionView.reloadData()
+                self.collectionView.reloadData()
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segue_details") {
+            let vc : RibotDetailsViewController = (segue.destination as! RibotDetailsViewController)
+            vc.ribot = selectedRibot
         }
     }
 }
@@ -72,7 +79,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return self.ribots.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -81,8 +88,11 @@ extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? MainCell else { return }
-        cell.setCell()
+        cell.setCell(ribot: self.ribots[indexPath.row])
     }
+    
+    
+
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
@@ -97,6 +107,11 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedRibot = ribots[indexPath.row]
+        self.performSegue(withIdentifier: "segue_details", sender: self)
     }
     
 }

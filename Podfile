@@ -8,7 +8,7 @@ target 'ribots' do
   # Pods for ribots
   pod 'Alamofire', '4.5'
   pod 'BouncyLayout', '1.1.0'
-  pod 'Kingfisher', '4.0'
+  pod 'Kingfisher', '3.13.1'
 
   target 'ribotsTests' do
     inherit! :search_paths
