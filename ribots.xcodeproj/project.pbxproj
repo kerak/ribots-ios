@@ -253,7 +253,8 @@
 				TargetAttributes = {
 					1ED4E0161F72E41B0005043A = {
 						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 89X33XB25A;
+						ProvisioningStyle = Manual;
 					};
 					1ED4E02A1F72E41B0005043A = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -549,10 +550,13 @@
 			baseConfigurationReference = EE62B1F922C122A37CCE3CF4 /* Pods-ribots.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 89X33XB25A;
 				INFOPLIST_FILE = ribots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jano.ribots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0c248b75-257f-4704-a3b1-58fa61d98fd0";
+				PROVISIONING_PROFILE_SPECIFIER = Wildcard;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -562,10 +566,13 @@
 			baseConfigurationReference = 83747B1FD62FD68C43EF071E /* Pods-ribots.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 89X33XB25A;
 				INFOPLIST_FILE = ribots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jano.ribots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "377e99c5-eac2-4f70-9a8d-2953f62edf7e";
+				PROVISIONING_PROFILE_SPECIFIER = Wildcard;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
