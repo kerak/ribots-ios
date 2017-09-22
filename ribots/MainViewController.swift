@@ -10,8 +10,8 @@ import UIKit
 import BouncyLayout
 
 class MainViewController: UIViewController {
-    var ribots : [Ribot] = [Ribot]()
-    var selectedRibot : Ribot?
+    
+    public var ribots : [Ribot] = [Ribot]()
     
     let cellSize = UIScreen.main.bounds.width*0.75
     
@@ -59,20 +59,6 @@ class MainViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: insets.bottom),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: insets.right)
             ])
-        
-        API.getRibots { (success, ribots) in
-            if(success) {
-                self.ribots = ribots!
-                self.collectionView.reloadData()
-            }
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "segue_details") {
-            let vc : RibotDetailsViewController = (segue.destination as! RibotDetailsViewController)
-            vc.ribot = selectedRibot
-        }
     }
 }
 
@@ -108,8 +94,10 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedRibot = ribots[indexPath.row]
-        self.performSegue(withIdentifier: "segue_details", sender: self)
+        let controller = self.storyboard!.instantiateViewController(withIdentifier: "details") as! RibotDetailsViewController
+        controller.modalPresentationStyle = .overCurrentContext
+        controller.ribot = ribots[indexPath.row]
+        self.present(controller, animated: true, completion: nil)
     }
     
 }

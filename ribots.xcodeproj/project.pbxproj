@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E7488631F7567BE00665474 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7488621F7567BE00665474 /* SplashViewController.swift */; };
+		1E7488651F75685C00665474 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7488641F75685C00665474 /* UIView.swift */; };
 		1ED4E01B1F72E41B0005043A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4E01A1F72E41B0005043A /* AppDelegate.swift */; };
 		1ED4E0201F72E41B0005043A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED4E01E1F72E41B0005043A /* Main.storyboard */; };
 		1ED4E0221F72E41B0005043A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED4E0211F72E41B0005043A /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E7488621F7567BE00665474 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1E7488641F75685C00665474 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1ED4E0171F72E41B0005043A /* ribots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ribots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED4E01A1F72E41B0005043A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ED4E01F1F72E41B0005043A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			children = (
 				1ED4E0491F72F1FD0005043A /* MainViewController.swift */,
 				1ED4E0571F7455F40005043A /* RibotDetailsViewController.swift */,
+				1E7488621F7567BE00665474 /* SplashViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				1ED4E0511F743D780005043A /* UIColor.swift */,
+				1E7488641F75685C00665474 /* UIView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -409,9 +415,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7488651F75685C00665474 /* UIView.swift in Sources */,
 				1ED4E0581F7455F40005043A /* RibotDetailsViewController.swift in Sources */,
 				1ED4E03C1F72E5640005043A /* API.swift in Sources */,
 				1ED4E0521F743D780005043A /* UIColor.swift in Sources */,
+				1E7488631F7567BE00665474 /* SplashViewController.swift in Sources */,
 				1ED4E03F1F72E5940005043A /* Ribot.swift in Sources */,
 				1ED4E0481F72EF890005043A /* MainCell.swift in Sources */,
 				1ED4E01B1F72E41B0005043A /* AppDelegate.swift in Sources */,
