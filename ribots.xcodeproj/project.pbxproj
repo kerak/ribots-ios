@@ -107,11 +107,8 @@
 				1ED4E0501F743D610005043A /* Extensions */,
 				1ED4E0451F72EF550005043A /* Components */,
 				1ED4E0421F72ED030005043A /* ViewControllers */,
+				1ED4E0591F755C330005043A /* Resources */,
 				1ED4E01A1F72E41B0005043A /* AppDelegate.swift */,
-				1ED4E01E1F72E41B0005043A /* Main.storyboard */,
-				1ED4E0211F72E41B0005043A /* Assets.xcassets */,
-				1ED4E0231F72E41B0005043A /* LaunchScreen.storyboard */,
-				1ED4E0261F72E41B0005043A /* Info.plist */,
 			);
 			path = ribots;
 			sourceTree = "<group>";
@@ -175,6 +172,17 @@
 				1ED4E0511F743D780005043A /* UIColor.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		1ED4E0591F755C330005043A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1ED4E01E1F72E41B0005043A /* Main.storyboard */,
+				1ED4E0231F72E41B0005043A /* LaunchScreen.storyboard */,
+				1ED4E0211F72E41B0005043A /* Assets.xcassets */,
+				1ED4E0261F72E41B0005043A /* Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		67A36B24B36A214DA18775EA /* Frameworks */ = {

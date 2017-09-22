@@ -90,8 +90,6 @@ extension MainViewController: UICollectionViewDataSource {
         guard let cell = cell as? MainCell else { return }
         cell.setCell(ribot: self.ribots[indexPath.row])
     }
-    
-    
 
 }
 

@@ -9,6 +9,7 @@ target 'ribots' do
   pod 'Alamofire', '4.5'
   pod 'BouncyLayout', '1.1.0'
   pod 'Kingfisher', '3.13.1'
+  pod 'PullToDismiss', '2.1'
 
   target 'ribotsTests' do
     inherit! :search_paths

@@ -8,9 +8,11 @@
 
 import UIKit
 import Kingfisher
+import PullToDismiss
 
 class RibotDetailsViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var backgroundColorView: UIView!
@@ -19,9 +21,9 @@ class RibotDetailsViewController: UIViewController {
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var bioTextView: UITextView!
     
-    
-    
     public var ribot: Ribot?
+    
+    private var pullToDismiss : PullToDismiss?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +31,19 @@ class RibotDetailsViewController: UIViewController {
         containerView.layer.cornerRadius = 20
         containerView.layer.borderWidth = 5.0
         
+        //Set up the PullToDismiss library
+        pullToDismiss = PullToDismiss(scrollView: scrollView)
+        pullToDismiss?.backgroundEffect = nil
+        
         if ribot != nil {
             setRibot(ribot: ribot!)
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        //Make sure that the scrollView is scrollable
+        DispatchQueue.main.async {
+            self.scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + 1)
         }
     }
     
@@ -42,7 +55,6 @@ class RibotDetailsViewController: UIViewController {
         containerView.layer.borderColor = UIColor(hex: ribot.hexColor!)?.cgColor
         
         if let imageUrl = ribot.avatar {
-            print(imageUrl)
             avatarImageView.kf.setImage(with: URL(string: imageUrl))
         }
         else {
@@ -54,10 +66,6 @@ class RibotDetailsViewController: UIViewController {
         birthdayLabel.text = ribot.dateOfBirth
         bioTextView.text = ribot.bio
         
-    }
-    
-    @IBAction func closePressed(sender: UIButton) {
-        dismiss(animated: true, completion: nil)
     }
     
 }
