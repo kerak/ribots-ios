@@ -78,7 +78,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYC-Tu-bqf" userLabel="Card">
-                                                <rect key="frame" x="20" y="36" width="325" height="611"/>
+                                                <rect key="frame" x="20" y="83.5" width="325" height="500"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9DB-xp-YXU">
                                                         <rect key="frame" x="0.0" y="0.0" width="325" height="160"/>
@@ -125,12 +125,9 @@
                                                             <constraint firstItem="ecA-dA-Cjv" firstAttribute="top" secondItem="yrc-iV-Kje" secondAttribute="bottom" constant="10.5" id="xOm-kB-J6G"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="balau bl;auasdlkajdlajdqpo0jd a;sdj iuquw aad[p aalmd a'dada " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6JK-OH-RMJ">
-                                                        <rect key="frame" x="10" y="336" width="305" height="260"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="balau bl;auasdlkajdlajdqpo0jd a;sdj iuquw aad[p aalmd a'dada " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JK-OH-RMJ">
+                                                        <rect key="frame" x="10" y="175" width="305" height="310"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="260" id="aJ4-zb-wQS"/>
-                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -141,17 +138,18 @@
                                                     <constraint firstItem="9DB-xp-YXU" firstAttribute="top" secondItem="GYC-Tu-bqf" secondAttribute="top" id="CYu-P5-54j"/>
                                                     <constraint firstItem="6JK-OH-RMJ" firstAttribute="leading" secondItem="GYC-Tu-bqf" secondAttribute="leading" constant="10" id="Fjd-mc-vS2"/>
                                                     <constraint firstItem="9DB-xp-YXU" firstAttribute="leading" secondItem="GYC-Tu-bqf" secondAttribute="leading" id="LLA-Sy-XiS"/>
+                                                    <constraint firstAttribute="height" constant="500" id="Q8P-rc-nqj"/>
                                                     <constraint firstAttribute="bottom" secondItem="6JK-OH-RMJ" secondAttribute="bottom" constant="15" id="UqQ-ag-Y8l"/>
+                                                    <constraint firstItem="6JK-OH-RMJ" firstAttribute="top" secondItem="9DB-xp-YXU" secondAttribute="bottom" constant="15" id="bcJ-Aw-eQi"/>
                                                     <constraint firstAttribute="trailing" secondItem="9DB-xp-YXU" secondAttribute="trailing" id="iij-Wx-sU7"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="GYC-Tu-bqf" secondAttribute="bottom" constant="20" id="91d-1S-Mad"/>
-                                            <constraint firstItem="GYC-Tu-bqf" firstAttribute="top" secondItem="FAk-xX-JE4" secondAttribute="top" constant="36" id="HNW-zx-dBZ"/>
                                             <constraint firstAttribute="trailing" secondItem="GYC-Tu-bqf" secondAttribute="trailing" constant="30" id="Y0n-3T-zha"/>
                                             <constraint firstItem="GYC-Tu-bqf" firstAttribute="leading" secondItem="FAk-xX-JE4" secondAttribute="leading" constant="20" id="dfh-GK-ebE"/>
+                                            <constraint firstItem="GYC-Tu-bqf" firstAttribute="centerY" secondItem="FAk-xX-JE4" secondAttribute="centerY" id="lD3-Ty-N81"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -186,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1w-9Y-C0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="1012"/>
+            <point key="canvasLocation" x="1232.8" y="1011.544227886057"/>
         </scene>
     </scenes>
     <resources>

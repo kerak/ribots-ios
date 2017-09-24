@@ -8,6 +8,7 @@
 
 import UIKit
 import BouncyLayout
+import Hero
 
 class MainViewController: UIViewController {
     
@@ -45,6 +46,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        isHeroEnabled = true
+        
         view.backgroundColor = .white
         view.clipsToBounds = true
         
@@ -69,7 +72,12 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: MainCell.reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCell.reuseIdentifier, for: indexPath)
+        
+        cell.heroID = "image_\(indexPath.item)"
+        cell.heroModifiers = [.fade, .scale(0.5)]
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
