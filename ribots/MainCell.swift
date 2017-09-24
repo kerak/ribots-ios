@@ -16,6 +16,10 @@ class MainCell: UICollectionViewCell {
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
     
+    
+    /// Sets the content of the Cell
+    ///
+    /// - Parameter ribot: Ribot used to fill the cell content
     func setCell(ribot: Ribot) {
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width/2
         backgroundColorView.layer.cornerRadius = backgroundColorView.bounds.width/2
@@ -29,6 +33,7 @@ class MainCell: UICollectionViewCell {
             avatarImageView.image = #imageLiteral(resourceName: "profile_placeholder")
         }
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

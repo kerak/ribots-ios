@@ -47,6 +47,10 @@ class RibotDetailsViewController: UIViewController {
         }
     }
     
+    
+    /// Sets the content of the ViewController
+    ///
+    /// - Parameter ribot: Ribot to use when filling the content
     public func setRibot(ribot: Ribot) {
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width/2
         

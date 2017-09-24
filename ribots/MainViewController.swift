@@ -14,28 +14,17 @@ class MainViewController: UIViewController {
     
     public var ribots : [Ribot] = [Ribot]()
     
-    let cellSize = UIScreen.main.bounds.width*0.75
+    //Initialize the BouncyLayout
+    private lazy var bouncyLayout = BouncyLayout(style: .regular)
     
-    let numberOfItems = 100
-    var randomFloat: CGFloat { return max(45, CGFloat(arc4random_uniform(100))) }
-    
-    lazy var topOffset: [CGFloat] = { (0..<self.numberOfItems).map { _ in CGFloat(arc4random_uniform(250)) } }()
-    
-    var insets: UIEdgeInsets = UIEdgeInsets(top: 200, left: 0, bottom: 200, right: 0)
-    
-    var additionalInsets: UIEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
-    
-    lazy var layout = BouncyLayout(style: .regular)
-    
-    lazy var collectionView: UICollectionView = {
-        
-        let view = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+    //Lazily create the collectionView
+    private lazy var collectionView: UICollectionView = {
+        //Create the CollectionView using our BouncyLayout
+        let view = UICollectionView(frame: .zero, collectionViewLayout: self.bouncyLayout)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delaysContentTouches = false
         view.alwaysBounceVertical = true
         view.alwaysBounceHorizontal = false
-        view.backgroundColor = nil
-        view.isOpaque = false
         view.delegate = self
         view.dataSource = self
         view.register(UINib(nibName: "MainCell", bundle: nil), forCellWithReuseIdentifier: MainCell.reuseIdentifier)
@@ -45,14 +34,13 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Hero is used to animate the presentation of the cells
         isHeroEnabled = true
         
-        view.backgroundColor = .white
-        view.clipsToBounds = true
-        
-        collectionView.contentInset = UIEdgeInsets(top: insets.top + additionalInsets.top, left: insets.left + additionalInsets.left, bottom: insets.bottom + additionalInsets.bottom, right: insets.right + additionalInsets.right)
-        collectionView.scrollIndicatorInsets = UIEdgeInsets(top: insets.top, left: insets.left, bottom: insets.bottom, right: insets.right)
+        //Create and position the CollectionView (needs to be done manually in order to
+        //use the bouncyLayout)
+        let insets: UIEdgeInsets = UIEdgeInsets(top: 220, left: 0, bottom: 220, right: 0)
+        collectionView.contentInset = insets
         view.addSubview(collectionView)
         view.sendSubview(toBack: collectionView)
         
@@ -65,6 +53,8 @@ class MainViewController: UIViewController {
     }
 }
 
+
+// MARK: - UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -87,6 +77,8 @@ extension MainViewController: UICollectionViewDataSource {
 
 }
 
+
+// MARK: - <#UICollectionViewDelegateFlowLayout#>
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -102,6 +94,8 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //Open the details controller
         let controller = self.storyboard!.instantiateViewController(withIdentifier: "details") as! RibotDetailsViewController
         controller.modalPresentationStyle = .overCurrentContext
         controller.ribot = ribots[indexPath.row]

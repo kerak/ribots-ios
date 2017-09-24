@@ -9,6 +9,8 @@
 import UIKit
 
 extension UIColor {
+    
+    /// Creates a UIColor from a hexadecimal String
     convenience init?(hex: String) {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         

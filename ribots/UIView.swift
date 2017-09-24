@@ -10,6 +10,9 @@ import UIKit
 
 extension UIView {
     
+    /// Rotates the view
+    ///
+    /// - Parameter duration: total duration of the animation
     func startRotating(duration: Double) {
         
         if self.layer.animation(forKey: "rotation") == nil {
@@ -23,6 +26,7 @@ extension UIView {
         }
     }
     
+    /// Stops the rotation of the view
     func stopRotating() {
         let kAnimationKey = "rotation"
         
@@ -31,6 +35,11 @@ extension UIView {
         }
     }
     
+    /// Fades In the view
+    ///
+    /// - Parameters:
+    ///   - duration: duration of the animation
+    ///   - completion: completion callback
     func fadeIn(duration: Double, completion: ((Bool) -> Swift.Void)?) {
         alpha = 0
         UIView.animate(withDuration: duration) {
@@ -38,6 +47,11 @@ extension UIView {
         }
     }
     
+    /// Fades Out the view
+    ///
+    /// - Parameters:
+    ///   - duration: duration of the animation
+    ///   - completion: completion callback
     func fadeOut(duration: Double, completion: ((Bool) -> Swift.Void)?) {
         
         alpha = 1

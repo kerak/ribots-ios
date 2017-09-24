@@ -15,12 +15,13 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Animate the logo, this could also be done with the Hero library
         logoImageView.startRotating(duration: 5)
-        
         logoImageView.fadeIn(duration: 0.5, completion: nil)
         
-        //Wait for one second before making the request
+        //Wait for one second before making the request so users can enjoy the fancy logo animation
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            //Get the list of Ribots
             API.getRibots { (success, ribots) in
                 self.logoImageView.fadeOut(duration: 0.5, completion: { (res) in
                     if success && ribots != nil {
