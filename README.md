@@ -44,6 +44,7 @@ Then just open the terminal, cd into the project folder and do:
 ```
 pod install
 ```
+**Note**: you may also need to run *pod repo update* before pod install
 
 Grab a coffee, open the ribots.xcworkspace file that was just created and hit Run!
 
