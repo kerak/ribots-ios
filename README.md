@@ -2,7 +2,7 @@
 
 An awesome App to display all the info about Ribots!
 
-## First, some technical stuff
+## Libraries used
 
 The App uses the following libraries:
 * **[Alamofire](https://github.com/Alamofire/Alamofire)** - One of the best networking libraries, always a must in any project that has to communicate with an API
@@ -11,19 +11,19 @@ The App uses the following libraries:
 * **[PullToDismiss](https://github.com/sgr-ksmt/PullToDismiss)** - Relatively unknown (even though is part of [awesome-ios](https://github.com/vsouza/awesome-ios)) and a bit outdated, but still a great help when you need a quick implementation of pull to dismiss functionality
 * **[Hero](https://github.com/lkzhao/Hero)** - Hands down the best library when it comes to iOS animations
 
-## Some thougts about the project
+## Some thoughts about the project
 
 The idea behind the project was to create a quick and nice looking demo that displays a list of all the Ribots, and their personal details when selecting any of them
 
 I took a minimalistic approach to the UI in order to keep the project simple (we all know how projects complexity can easily grow exponentially!)
 
-Regarding the code I tried to use well known and solid libraries, same as I would do in a real project. I also tried to keep it as simple as possible, but structuring the code the same way that I would do in real life. 
+Regarding the code, I tried to use well-known and solid libraries, same as I would do in a real project. I also tried to keep it as simple as possible but structuring the code the same way that I would do in real life.
 
 The project is divided into four main parts:
-* **API** - This is where all the fetching, parsing and deserializing happens, it includes the Models, and the API file (in a bigger project this file would be divided into resources, routes and possibly a networking helper to improve the readability and maintanability of the code.
+* **API** - This is where all the fetching, parsing and deserializing happens, it includes the Models, and the API file (in a bigger project this file would be divided into resources, routes and possibly a networking helper to improve the readability and maintainability of the code.
 * **Extensions** - Here I keep all the "util" functions, as a rule of thumb these files should be interchangeable between projects
 * **Components** - Includes all the custom Views that are used in the project. In this case there is only the main screen cell
-* **ViewControllers** - This is where all the ViewControllers are, as projects grow in size I usually divide them in functional parts, e.g. Login, Account or Settings. I usually like to experiment with architectural patterns like MVP or VIPER, but in order to keep the simplicity of the project I went with the good old MVC.
+* **ViewControllers** - This is where all the ViewControllers are, as projects grow in size I usually divide them into functional parts, e.g. Login, Account or Settings. I usually like to experiment with architectural patterns like MVP or VIPER, but in order to keep the simplicity of the project, I went with the good old MVC.
 
 There's also a Resources folder that keeps all the images, storyboards and .plist
 
