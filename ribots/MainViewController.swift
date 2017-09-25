@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
         view.delaysContentTouches = false
         view.alwaysBounceVertical = true
         view.alwaysBounceHorizontal = false
+        view.backgroundColor = nil
         view.delegate = self
         view.dataSource = self
         view.register(UINib(nibName: "MainCell", bundle: nil), forCellWithReuseIdentifier: MainCell.reuseIdentifier)
@@ -37,6 +38,7 @@ class MainViewController: UIViewController {
         //Hero is used to animate the presentation of the cells
         isHeroEnabled = true
         
+        view.backgroundColor = .white
         //Create and position the CollectionView (needs to be done manually in order to
         //use the bouncyLayout)
         let insets: UIEdgeInsets = UIEdgeInsets(top: 220, left: 0, bottom: 220, right: 0)
